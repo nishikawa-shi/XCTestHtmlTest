@@ -28,6 +28,12 @@ class XCTestHtmlTestUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        sleep(3)
+        let fullScreenshot = XCUIScreen.main.screenshot()
+        let screenshot = XCTAttachment(screenshot: fullScreenshot)
+        screenshot.lifetime = .keepAlways
+        add(screenshot)
+
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
